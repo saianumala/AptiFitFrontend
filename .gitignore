@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Local env files
+.env
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite cache
+.vite/
+
+# pnpm
+.pnpm-store/
+.pnpm-debug.log*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sw?
+
+# Optional: test coverage or misc
+coverage/
