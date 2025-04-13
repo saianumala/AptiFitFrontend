@@ -1,7 +1,6 @@
 import { Question } from "@/utils/typesInterface";
 import { SkipForward } from "lucide-react";
 import { NumberWithUnitInput } from "./numberUnitInputSelectionComponent";
-import { CalendarInput } from "./calendarInputComponent";
 import { TextInput } from "./textInputComponent";
 import { RadioInput } from "./radioInputGroup";
 

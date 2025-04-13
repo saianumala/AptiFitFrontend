@@ -1,4 +1,4 @@
-import { Dumbbell, Clock, Activity, BarChart2 } from "lucide-react";
+import { Dumbbell, Activity, BarChart2 } from "lucide-react";
 
 interface ExerciseCardProps {
   name: string;

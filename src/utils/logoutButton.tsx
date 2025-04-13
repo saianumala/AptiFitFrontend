@@ -1,7 +1,6 @@
 // src/components/common/LogoutButton.tsx
-import { useAuth } from "@/customHooks/useAuth";
 import { toast } from "react-hot-toast";
-import { LogOut, SubscriptIcon } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 export function LogoutButton() {
   const navigate = useNavigate();

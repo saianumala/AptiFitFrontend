@@ -1,5 +1,5 @@
 import { ProfileForm } from "./profileForm";
-import { useAuth } from "@/customHooks/useAuth";
+// import { useAuth } from "@/customHooks/useAuth";
 import {
   userPreferencesState,
   userState,
@@ -9,7 +9,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { useEffect } from "react";
 
 export default function ProfileTab() {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   const [preferences, setPreferences] = useRecoilState(userPreferencesState);
   const [bodyMetrics, setBodyMetrics] = useRecoilState(bodyMetricsState);
   const currentUser = useRecoilValue(userState);

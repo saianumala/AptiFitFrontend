@@ -43,15 +43,15 @@ interface Workout {
   updatedAt?: string;
 }
 
-interface WorkoutAdvice {
-  id: string;
-  userId: string;
-  summary: string;
-  frequency: string;
-  type: string;
-  active: boolean;
-  workouts: Workout[];
-}
+// interface WorkoutAdvice {
+//   id: string;
+//   userId: string;
+//   summary: string;
+//   frequency: string;
+//   type: string;
+//   active: boolean;
+//   workouts: Workout[];
+// }
 
 export default function WorkoutTab() {
   const workoutAdvice = useRecoilValue(workoutAdviceState);

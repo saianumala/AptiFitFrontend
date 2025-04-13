@@ -5,11 +5,10 @@ import { useEffect } from "react";
 import { DashboardHeader } from "./dashBoardHeader";
 import { v4 as uuidv4 } from "uuid";
 import { useAuth } from "@/customHooks/useAuth";
-import NotificationSetup from "./notificationSetup";
 import { useSetRecoilState } from "recoil";
 import {
   notificationsState,
-  selectedNotificationAtom,
+  // selectedNotificationAtom,
   showNotificationsAtom,
 } from "@/recoilStore/recoilAtoms";
 import ChatWidget from "./chatWidget";
@@ -18,7 +17,7 @@ export function DashboardLayout() {
   const navigate = useNavigate();
   const setNotifications = useSetRecoilState(notificationsState);
   const setShowNotifications = useSetRecoilState(showNotificationsAtom);
-  const setSelectedNotification = useSetRecoilState(selectedNotificationAtom);
+  // const setSelectedNotification = useSetRecoilState(selectedNotificationAtom);
   const { isAuthenticated, loading, user } = useAuth();
   useEffect(() => {
     if (!loading && isAuthenticated) {
@@ -60,7 +59,6 @@ export function DashboardLayout() {
 
         <main className="flex-1 overflow-y-auto">
           <div className="container mx-auto px-4 py-6">
-            <NotificationSetup />
             <ChatWidget />
             <Outlet />
           </div>

@@ -1,5 +1,5 @@
 import {
-  bodyMetricsSelector,
+  // bodyMetricsSelector,
   userPreferencesSelector,
 } from "@/recoilStore/recoilAtoms";
 import DashboardCard from "../cardComponent";
@@ -9,8 +9,8 @@ import { Activity, Dumbbell, Target, Droplet, Moon } from "lucide-react";
 
 export default function HomeTab() {
   const preferences = useRecoilValue(userPreferencesSelector);
-  const metrics = useRecoilValue(bodyMetricsSelector);
-  const latestMetrics = metrics ? metrics[metrics.length - 1] : null;
+  // const metrics = useRecoilValue(bodyMetricsSelector);
+  // const latestMetrics = metrics ? metrics[metrics.length - 1] : null;
 
   return (
     <div className="p-6">

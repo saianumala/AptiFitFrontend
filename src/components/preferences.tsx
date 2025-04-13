@@ -4,7 +4,7 @@ import { FormValues, Question } from "@/utils/typesInterface";
 import { FormStep } from "./formStepComponent";
 import { StepIndicator } from "./stepIndicatorComponent";
 import { WelcomeScreen } from "./welcomeScreenComponent";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { showWelcomeSlide } from "@/recoilStore/recoilAtoms";
 import { useAuth } from "@/customHooks/useAuth";
 import { useNavigate } from "react-router-dom";

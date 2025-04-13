@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Lock, Mail } from "lucide-react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/customHooks/useAuth";
 
 export function SignIn() {

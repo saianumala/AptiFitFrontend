@@ -2,20 +2,18 @@ import { useState, useEffect, useRef } from "react";
 import MealCard from "../mealCard";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { toast } from "react-hot-toast";
-
 import {
   todayMealPlanSelector,
   consumedMealsByDateSelector,
-  dietAdviceSelector,
-  ConsumedMeal,
+  // dietAdviceSelector,
   MealDetails,
   mealPlanState,
   consumedMealsState,
 } from "@/recoilStore/recoilAtoms";
 import MacroSummary from "../macroSummary";
 import { Camera, Check, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { saveUserMeal } from "@/lib/api";
-import { format, addDays, subDays, isSameDay, parseISO } from "date-fns";
+import { format, addDays, subDays, isSameDay } from "date-fns";
+import NotificationSetup from "../notificationSetup";
 
 interface MealTrackingData {
   id: string;
@@ -33,10 +31,10 @@ interface MealTrackingData {
 
 // Meal time windows configuration - can be loaded from settings or API
 const MEAL_TIME_WINDOWS: Record<string, { start: number; end: number }> = {
-  breakfast: { start: 6, end: 10 }, // 6AM - 10AM
+  breakfast: { start: 0, end: 10 }, // 6AM - 10AM
   lunch: { start: 11, end: 14 }, // 11AM - 2PM
   dinner: { start: 17, end: 21 }, // 5PM - 9PM
-  snack: { start: 10, end: 22 }, // 10AM - 10PM (flexible)
+  snack: { start: 0, end: 22 }, // 10AM - 10PM (flexible)
 };
 
 // Standard meal types in preferred display order
@@ -48,7 +46,6 @@ export default function DietTab() {
     null
   );
   const [loading, setLoading] = useState(false);
-  const [mealsForDisplay, setMealsForDisplay] = useState<any>();
   const setMealPlan = useSetRecoilState(mealPlanState);
   const setConsumedMeals = useSetRecoilState(consumedMealsState);
 
@@ -60,7 +57,7 @@ export default function DietTab() {
   const todaysMealPlan = useRecoilValue(todayMealPlanSelector);
   // const allMealPLans = useRecoilValue(mealPlanState);
   const mealsByDate = useRecoilValue(consumedMealsByDateSelector);
-  const dietAdvice = useRecoilValue(dietAdviceSelector);
+  // const dietAdvice = useRecoilValue(dietAdviceSelector);
   // console.log("meal plans", allMealPLans);
   // console.log("todaysMealPlan:", todaysMealPlan);
   // Update current time every minute
@@ -110,9 +107,7 @@ export default function DietTab() {
     }
   };
 
-  const handleSubmit = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleSubmit = async () => {
     if (!trackingData) return;
     // console.log("target element", e.target);
     try {
@@ -285,7 +280,7 @@ export default function DietTab() {
     const mealsByType: Record<string, any> = {};
     // console.log(mealsByType);
     // First, organize regular meals (breakfast, lunch, dinner)
-    MEAL_TYPES.forEach((type, index) => {
+    MEAL_TYPES.forEach((type) => {
       // console.log("iteration number: ", index);
       // console.log(type);
       const typeMeals = mealPlan.meals.filter((m: any) => m.type === type);
@@ -435,6 +430,7 @@ export default function DietTab() {
   // console.log(mealsToDisplay);
   return (
     <div className="p-6">
+      <NotificationSetup />
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold mb-6">Nutrition Journal</h2>
         {isToday && (

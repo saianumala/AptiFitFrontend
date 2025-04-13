@@ -1,9 +1,4 @@
-import {
-  ConsumedMeal,
-  dietAdviceSelector,
-  dietAdviceState,
-  Meal,
-} from "@/recoilStore/recoilAtoms";
+import { ConsumedMeal, dietAdviceState, Meal } from "@/recoilStore/recoilAtoms";
 import { format, parseISO } from "date-fns";
 import {
   ChevronDown,
@@ -54,11 +49,7 @@ const MEAL_TYPE_COLORS: Record<
   },
 };
 
-export default function MealCard({
-  mealType,
-  mealData,
-  isConsumed,
-}: MealCardProps) {
+export default function MealCard({ mealType, mealData }: MealCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Get color theme based on meal type

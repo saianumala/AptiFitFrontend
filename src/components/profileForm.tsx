@@ -19,7 +19,7 @@ import {
   UserPreferences,
   userPreferencesState,
 } from "@/recoilStore/recoilAtoms";
-import { useAuth } from "@/customHooks/useAuth";
+// import { useAuth } from "@/customHooks/useAuth";
 import { useSetRecoilState } from "recoil";
 import toast from "react-hot-toast";
 
@@ -77,7 +77,6 @@ export function ProfileForm({
     handleSubmit,
     formState: { errors, dirtyFields },
     reset,
-    watch,
   } = useForm<Partial<UserPreferences>>({ defaultValues: initialData });
 
   const onSubmit: SubmitHandler<Partial<UserPreferences>> = (data) => {

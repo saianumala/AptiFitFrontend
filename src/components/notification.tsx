@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   notificationsState,
   selectedNotificationAtom,
@@ -6,7 +6,7 @@ import {
 } from "@/recoilStore/recoilAtoms";
 import { BellIcon, X } from "lucide-react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { useAuth } from "@/customHooks/useAuth";
+// import { useAuth } from "@/customHooks/useAuth";
 
 export interface Notification {
   id: string;

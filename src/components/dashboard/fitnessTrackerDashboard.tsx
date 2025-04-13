@@ -1,15 +1,16 @@
-import { useState } from "react";
+// import { useState } from "react";
 import DietTab from "./dietTab";
 import HomeTab from "./homeTab";
 import Sidebar from "../sidebar/sidebarComponent";
 import MotivationTab from "./motivationTab";
 import HydrationSleepTab from "./hydrationSleepTab";
 import WorkoutTab from "./workoutTab";
+import { useRecoilValue } from "recoil";
+import { activeTabAtom } from "@/recoilStore/recoilAtoms";
 
 export default function FitnessTrackerDashboard() {
-  const [activeTab, setActiveTab] = useState("home");
-  const [selectedDay, setSelectedDay] = useState(3); // Wednesday by default
-
+  // const [selectedDay, setSelectedDay] = useState(3); // Wednesday by default
+  const activeTab = useRecoilValue(activeTabAtom);
   const renderMainContent = () => {
     switch (activeTab) {
       case "diet":

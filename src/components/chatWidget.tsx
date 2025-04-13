@@ -127,8 +127,8 @@ const ChatWidget = () => {
       console.log("Received response from backend:", data);
 
       // Set the response for typing effect
-      if (typeof data.message.response === "string") {
-        setFullResponse(data.message.response);
+      if (typeof data.message === "string") {
+        setFullResponse(data.message);
       } else {
         console.error("Unexpected response format:", data);
         setFullResponse("Sorry, I received an unexpected response format.");
@@ -148,9 +148,9 @@ const ChatWidget = () => {
   };
 
   // Function to refresh chat history manually if needed
-  const refreshHistory = async () => {
-    setHistoryFetched(false); // Reset the flag to allow fetching again
-  };
+  // const refreshHistory = async () => {
+  //   setHistoryFetched(false); // Reset the flag to allow fetching again
+  // };
 
   return (
     <div>

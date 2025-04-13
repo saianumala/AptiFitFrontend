@@ -1,19 +1,13 @@
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-import {
-  TrendingUp,
-  TrendingDown,
-  Scale,
-  HeartPulse,
-  Activity,
-} from "lucide-react";
+// import {
+//   LineChart,
+//   Line,
+//   XAxis,
+//   YAxis,
+//   CartesianGrid,
+//   Tooltip,
+//   ResponsiveContainer,
+// } from "recharts";
+import { TrendingUp, TrendingDown } from "lucide-react";
 import React from "react";
 
 interface MetricSummaryCardProps {

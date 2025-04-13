@@ -29,14 +29,14 @@ export default function RecoveryActionsTab() {
     return date.toLocaleString();
   };
 
-  const getDeviationLabel = (deviation: any) => {
-    const [key] = Object.keys(deviation);
-    const { direction, percentage } = deviation[key];
-    const absPercentage = Math.abs(percentage);
-    return `${
-      key.charAt(0).toUpperCase() + key.slice(1)
-    } ${direction} by ${absPercentage}%`;
-  };
+  // const getDeviationLabel = (deviation: any) => {
+  //   const [key] = Object.keys(deviation);
+  //   const { direction, percentage } = deviation[key];
+  //   const absPercentage = Math.abs(percentage);
+  //   return `${
+  //     key.charAt(0).toUpperCase() + key.slice(1)
+  //   } ${direction} by ${absPercentage}%`;
+  // };
 
   const getSourceTypeLabel = (sourceType: any) => {
     switch (sourceType) {
