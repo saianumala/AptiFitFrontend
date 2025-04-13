@@ -14,7 +14,6 @@ import HydrationSleepTab from "./components/dashboard/hydrationSleepTab";
 import MotivationTab from "./components/dashboard/motivationTab";
 import FitnessQuestionnaireForm from "./components/preferences";
 import FitnessTrackerLanding from "./pages/landingPage";
-import RecoveryActionsComponent from "./components/dashboard/recoveryActions";
 import RecoveryActionsTab from "./components/dashboard/recoveryActions";
 
 export const router = createBrowserRouter([
