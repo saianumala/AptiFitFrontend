@@ -31,10 +31,10 @@ interface MealTrackingData {
 
 // Meal time windows configuration - can be loaded from settings or API
 const MEAL_TIME_WINDOWS: Record<string, { start: number; end: number }> = {
-  breakfast: { start: 0, end: 10 }, // 6AM - 10AM
+  breakfast: { start: 6, end: 10 }, // 6AM - 10AM
   lunch: { start: 11, end: 14 }, // 11AM - 2PM
   dinner: { start: 17, end: 21 }, // 5PM - 9PM
-  snack: { start: 0, end: 22 }, // 10AM - 10PM (flexible)
+  snack: { start: 10, end: 22 }, // 10AM - 10PM (flexible)
 };
 
 // Standard meal types in preferred display order
